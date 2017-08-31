@@ -2,14 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 
-import * as ROT from './vendor/rot.min.js'
+import * as ROTModule from './vendor/rot.min.js'
 
 import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
 
-Vue.prototype.ROT = ROT
+Vue.prototype.ROT = ROTModule.ROT
 
 /* eslint-disable no-new */
 new Vue({

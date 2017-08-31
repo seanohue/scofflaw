@@ -25,6 +25,7 @@
 export default {
   name: 'hello',
   data () {
+    console.log(this.ROT)
     return {
       msg: `ROT is Supported: ${this.ROT.isSupported()}`
     }
