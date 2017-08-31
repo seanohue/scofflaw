@@ -13,12 +13,10 @@ var env = config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
-    rules: [
-      { test: /rot\.min\.js$/, use: ['expose-loader?ROT'] },
-    ].concat(utils.styleLoaders({
+    rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
       extract: true
-    }))
+    })
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {

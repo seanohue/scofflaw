@@ -29,6 +29,7 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /rot\.min\.js$/, use: ['expose-loader?ROT'] },
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
