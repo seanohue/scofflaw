@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <rot-map></rot-map>
   </div>
 </template>
 
 <script>
+import ROTMap from '@/components/MapView'
 
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'rot-map': ROTMap
+  }
 }
 </script>
 

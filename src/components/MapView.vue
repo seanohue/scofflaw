@@ -1,13 +1,13 @@
 <template>
   <div class="main-container">
-    <h1 class="incompatible-error-msg" v-if="!isROTCompatible">ROT is not supported by your browser.</h1>
+    <h1 class="incompatible-error-msg" v-if="!isROTCompatible">ROT.js is not supported by your browser.</h1>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'map',
+  name: 'rot-map',
   data () {
     if (this.env === 'development') {
       console.log('ROT:', this.ROT)
@@ -15,6 +15,12 @@ export default {
     return {
       isROTCompatible: this.ROT.isSupported()
     }
+  },
+
+  mounted () {
+    // Create and append the ROT map display.
+    this.display = new this.ROT.Display()
+    this.$el.appendChild(this.display.getContainer())
   }
 }
 </script>

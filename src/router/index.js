@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MapView from '@/components/MapView'
+import Vuex from 'vuex'
+import App from '@/App'
 
-Vue.use(Router)
+Vue.use(Vuex)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'MapView',
-      component: MapView
+      name: 'App',
+      component: App
     }
   ]
 })
