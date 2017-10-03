@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import MapTile from '@/lib/MapTile'
 
 export default {
   name: 'rot-map',
@@ -35,15 +36,14 @@ export default {
       digger.create((x, y, value) => {
         if (value) return
         // Ugh, gross.
-        this.map[x + ',' + y] = '.'
+        this.map[x + ',' + y] = new MapTile(x, y, '.')
       })
       this.drawMap()
     },
 
     drawMap () {
       Object.keys(this.map).forEach(key => {
-        const [x, y] = key.split(',').map((n) => parseInt(n, 10))
-        this.display.draw(x, y, this.map[key])
+        this.map(key).draw()
       })
     }
   }
