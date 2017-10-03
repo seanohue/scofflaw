@@ -43,7 +43,10 @@ export default {
 
     drawMap () {
       Object.keys(this.map).forEach(key => {
-        this.map(key).draw()
+        const mapTile = this.map[key]
+        if (mapTile instanceof MapTile) {
+          mapTile.draw(this.display)
+        }
       })
     }
   }
